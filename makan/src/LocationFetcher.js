@@ -1,4 +1,5 @@
 import React from 'react';
+import { useGeolocation } from '@uidotdev/usehooks';
 
 function LocationFetcher({
   location: { loading, error, latitude, longitude },
