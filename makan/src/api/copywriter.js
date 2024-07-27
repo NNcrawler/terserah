@@ -4,29 +4,54 @@ import Ajv from 'ajv';
 const COPY_WRITER_URL =
   'https://asia-east1-personal-299420.cloudfunctions.net/CopyWriteFood';
 
-const schema = {
-  type: 'object',
-  properties: {
-    name: { type: 'string' },
-  },
-  required: ['name'],
-  additionalProperties: false,
+const ajv = new Ajv();
+const validatorMap = {
+  localGuideRecommendation: ajv.compile({
+    type: 'object',
+    properties: {
+      name: { type: 'string' },
+    },
+    required: ['name'],
+    additionalProperties: false,
+  }),
+  reviewSummarizer: ajv.compile({
+    type: 'object',
+    properties: {
+      reviews: {
+        type: 'array',
+        items: {
+          type: 'string',
+        },
+      },
+    },
+    required: ['reviews'],
+    additionalProperties: false,
+  }),
 };
 
-const ajv = new Ajv();
-const validate = ajv.compile(schema);
+const copyWriter = async (mode, data) => {
+  if (validatorMap[mode] === undefined) {
+    throw new Error('Invalid mode');
+  }
 
-const fetchFoodCopyWrite = async (data) => {
+  const validate = validatorMap[mode];
+
   const valid = validate(data);
 
   if (!valid) {
     // Handle validation errors
-    console.error('Validation errors:', validate.errors);
-    throw new Error('Invalid data format');
+    throw new Error(
+      `Invalid data format ${JSON.stringify(
+        validate.errors
+      )}\ngot ${JSON.stringify(data)}`
+    );
   }
 
   try {
-    const response = await axios.post(COPY_WRITER_URL, data, {});
+    const response = await axios.post(COPY_WRITER_URL, {
+      mode,
+      data,
+    });
     console.log('Success:', response.data);
     return response.data;
   } catch (error) {
@@ -35,4 +60,4 @@ const fetchFoodCopyWrite = async (data) => {
   }
 };
 
-export default fetchFoodCopyWrite;
+export default copyWriter;

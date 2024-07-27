@@ -10,9 +10,9 @@ import (
 
 const systemInstruction = `Summarize the following review into a single review. Provide the summary as if you are the one who gives it. Return the review in HTML. Bold the strong point of the review. Have the summary in Bahasa Indonesia
 
-Have 2 kinds of summary. One is food review summary. Second is place review summary
+Have 2 kinds of summary. One is a food review summary. The second is a place review summary. Have one review for each category. Each summary has a maximum of 280 characters.
 
-Return the summaries in array of json`
+Return the summaries in an array of JSON. The JSON has 2 fields called "category" and "review"`
 
 type ReviewSummarizer struct {
 	ApiKey string

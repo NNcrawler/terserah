@@ -11,7 +11,9 @@ function Card({ title, content, location: { googleMaps } }) {
           <Direction />
         </a>
       </div>
-      <p class="font-normal text-gray-700 dark:text-gray-400">{content}</p>
+      <p class="font-normal text-gray-700 dark:text-gray-400">
+        <div dangerouslySetInnerHTML={{ __html: content[0]?.review }} />
+      </p>
     </div>
   );
 }
