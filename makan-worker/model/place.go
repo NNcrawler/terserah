@@ -15,6 +15,7 @@ type Place struct {
 	UserRatingCount int
 	PriceLevel      string
 	Reviews         []string
+	DishType        []string
 
 	Tags []string
 }

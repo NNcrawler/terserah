@@ -7,6 +7,7 @@ import (
 	"strconv"
 
 	"github.com/ahmadnaufal/recommender-worker/ext/location"
+	"github.com/ahmadnaufal/recommender-worker/ext/openai"
 	"github.com/ahmadnaufal/recommender-worker/ext/weather"
 	"github.com/ahmadnaufal/recommender-worker/model"
 	"github.com/ahmadnaufal/recommender-worker/recommender"
@@ -21,6 +22,7 @@ func init() {
 
 type PlaceResponse struct {
 	Name       string        `json:"name"`
+	Tags       []string      `json:"tags"`
 	DishType   []string      `json:"dishType"`
 	PriceLevel string        `json:"priceLevel"`
 	Location   PlaceLocation `json:"location"`
@@ -49,6 +51,7 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 
 	locationProv := location.New(cfg.Google.Host, cfg.Google.APIKey)
 	weatherProv := weather.New(cfg.Weather.Host, cfg.Weather.APIKey)
+	openAiProv := openai.New(cfg.OpenAI.Host, cfg.OpenAI.APIKey)
 	recommenderEngine := recommender.New("test")
 
 	ctx := r.Context()
@@ -59,14 +62,26 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 
 	places, err := locationProv.GetNearby(ctx, latitude, longitude, 500.0, 10)
 	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
 		fmt.Fprint(w, "Error:", err.Error())
 		return
 	}
 
 	currentWeather, err := weatherProv.GetWeather(ctx, latitude, longitude)
 	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
 		fmt.Fprint(w, "Error:", err.Error())
 		return
+	}
+
+	// populate dishes
+	for i := 0; i < len(places); i++ {
+		dishType, err := openAiProv.GetPossibleFoodsFromPlace(ctx, places[i])
+		if err != nil {
+			fmt.Fprint(w, "Error:", err.Error())
+			return
+		}
+		places[i].DishType = dishType
 	}
 
 	placesToRecommend, err := recommenderEngine.GenerateRecommendations(r.Context(), recommender.RecommendationRequest{
@@ -74,6 +89,7 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 		WeatherCondition: currentWeather,
 	})
 	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
 		fmt.Fprint(w, "Error:", err.Error())
 		return
 	}
@@ -84,15 +100,17 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 	}
 
 	response := BaseResponse{Data: placesResponse}
-	responseStr, _ := json.Marshal(response)
 
-	fmt.Fprint(w, string(responseStr))
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(response)
 }
 
 func placeToResponse(place model.Place) PlaceResponse {
 	return PlaceResponse{
 		Name:       place.PlaceName,
-		DishType:   place.Tags,
+		DishType:   place.DishType,
+		Tags:       place.Tags,
 		PriceLevel: place.PriceLevel,
 		Location: PlaceLocation{
 			GoogleMaps: place.GoogleMapsURI,

@@ -15,6 +15,8 @@ func New(tiktokProvider string) RecommenderEngine {
 	return RecommenderEngine{tiktokProvider: tiktokProvider}
 }
 
+// recommendation should follow this rule:
+// google maps:
 func (r RecommenderEngine) GenerateRecommendations(ctx context.Context, req RecommendationRequest) ([]model.Place, error) {
 	placesToSort := req.Places
 	// currentWeather := req.WeatherCondition

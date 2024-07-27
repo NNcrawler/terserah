@@ -14,6 +14,11 @@ type Config struct {
 		Host   string `env:"WEATHER_HOST"`
 		APIKey string `env:"WEATHER_API_KEY"`
 	}
+
+	OpenAI struct {
+		Host   string `env:"OPENAI_HOST"`
+		APIKey string `env:"OPENAI_API_KEY"`
+	}
 }
 
 func LoadConfig() (Config, error) {
