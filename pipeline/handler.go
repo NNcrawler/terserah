@@ -1,6 +1,7 @@
 package makanworker
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -51,7 +52,6 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 
 	locationProv := location.New(cfg.Google.Host, cfg.Google.APIKey)
 	weatherProv := weather.New(cfg.Weather.Host, cfg.Weather.APIKey)
-	openAiProv := openai.New(cfg.OpenAI.Host, cfg.OpenAI.APIKey)
 	recommenderEngine := recommender.New("test")
 
 	ctx := r.Context()
@@ -74,14 +74,16 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// populate dishes
-	for i := 0; i < len(places); i++ {
-		dishType, err := openAiProv.GetPossibleFoodsFromPlace(ctx, places[i])
-		if err != nil {
-			fmt.Fprint(w, "Error:", err.Error())
-			return
-		}
-		places[i].DishType = dishType
+	err = enrichWithDishTypes(ctx, cfg, places)
+	if err != nil {
+		fmt.Fprint(w, "Error:", err.Error())
+		return
+	}
+
+	err = enrichWithReviews(ctx, cfg, places)
+	if err != nil {
+		fmt.Fprint(w, "Error:", err.Error())
+		return
 	}
 
 	placesToRecommend, err := recommenderEngine.GenerateRecommendations(r.Context(), recommender.RecommendationRequest{
@@ -121,11 +123,6 @@ func placeToResponse(place model.Place) PlaceResponse {
 }
 
 func handleCors(w http.ResponseWriter, r *http.Request) bool {
-	// Set CORS headers
-	// Allow all origins
-	// Allow specific methods
-	// Allow specific headers
-	// Handle preflight requests
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
@@ -135,4 +132,33 @@ func handleCors(w http.ResponseWriter, r *http.Request) bool {
 		return true
 	}
 	return false
+}
+
+func enrichWithDishTypes(ctx context.Context, cfg server.Config, places []model.Place) error {
+	openAiProv := openai.NewDishExtractor(cfg.OpenAI.APIKey)
+	for i := 0; i < len(places); i++ {
+		dishType, err := openAiProv.GetPossibleFoodsFromPlace(ctx, places[i].Reviews)
+		if err != nil {
+			return err
+		}
+		places[i].DishType = dishType
+	}
+	return nil
+}
+
+func enrichWithReviews(ctx context.Context, cfg server.Config, places []model.Place) error {
+	reviewSummarizer := openai.ReviewSummarizer{
+		ApiKey: cfg.OpenAI.APIKey,
+	}
+	for i := 0; i < len(places); i++ {
+		reviewSummary, err := reviewSummarizer.AsReviewer(places[i].Reviews)
+		if err != nil {
+			return err
+		}
+		places[i].ReviewsSummary = model.ReviewSummary{
+			Food:  reviewSummary.Food,
+			Place: reviewSummary.Place,
+		}
+	}
+	return nil
 }

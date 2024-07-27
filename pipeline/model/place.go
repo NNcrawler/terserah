@@ -17,5 +17,12 @@ type Place struct {
 	Reviews         []string
 	DishType        []string
 
+	ReviewsSummary ReviewSummary
+
 	Tags []string
+}
+
+type ReviewSummary struct {
+	Food  string
+	Place string
 }

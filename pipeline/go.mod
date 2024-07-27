@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/GoogleCloudPlatform/functions-framework-go v1.8.1
+	github.com/ayush6624/go-chatgpt v0.3.0
 	github.com/joeshaw/envdecode v0.0.0-20200121155833-099f1fc765bd
 )
 
