@@ -71,6 +71,7 @@ func (g *GoogleLocationAPI) GetNearby(ctx context.Context, latitude, longitude, 
 				Radius: radius,
 			},
 		},
+		LanguageCode: "id",
 	}
 	requestBody, _ := json.Marshal(requestNearby)
 	req, _ := http.NewRequest(http.MethodPost, requestURL, bytes.NewBuffer(requestBody))

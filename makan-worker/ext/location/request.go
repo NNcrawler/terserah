@@ -18,4 +18,5 @@ type Request struct {
 	IncludedTypes       []string            `json:"includedTypes"`
 	MaxResultCount      int                 `json:"maxResultCount"`
 	LocationRestriction LocationRestriction `json:"locationRestriction"`
+	LanguageCode        string              `json:"languageCode"`
 }
