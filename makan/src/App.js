@@ -1,12 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import LocationFetcher from './LocationFetcher';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
+      <div class="flex items-center justify-center h-screen">
+        <div>
+          <LocationFetcher />
+        </div>
+      </div>
     </div>
   );
 }
