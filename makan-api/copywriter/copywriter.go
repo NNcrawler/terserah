@@ -10,12 +10,20 @@ import (
 	"github.com/ayush6624/go-chatgpt"
 )
 
-func CallOpenAI(apiKey, prompt string) (string, error) {
+func callOpenAI(apiKey, prompt string) (string, error) {
 	client, err := chatgpt.NewClient(apiKey)
 	if err != nil {
 		fmt.Print(err)
 	}
-	res, err := client.SimpleSend(context.Background(), prompt)
+	res, err := client.Send(context.Background(), &chatgpt.ChatCompletionRequest{
+		Model: chatgpt.GPT35Turbo,
+		Messages: []chatgpt.ChatMessage{
+			{
+				Role:    chatgpt.ChatGPTModelRoleSystem,
+				Content: prompt,
+			},
+		},
+	})
 	if err != nil {
 		return "", fmt.Errorf("fail to call openAI: ", err)
 	}
@@ -32,13 +40,13 @@ type Writer struct {
 }
 
 func (w Writer) AsLocalGuide(dish DishToRecommend) (string, error) {
-	const promptTmpl = `Buat copywriting untuk jualan sebagai berikut: Anggap kamu adalah guide lokal. Sebagai guide lokal yang peduli terhadap pendatang kamu ingin meyakinkan pendatang untuk mencoba {{.Name}}`
+	const promptTmpl = `Buat copywriting untuk jualan sebagai berikut: Anggap kamu adalah guide lokal yang sedang berada ditengah perjalanan bersama dengan tamu. Kamu dan tamu sudah bersama selama beberapa saat. Sebagai guide lokal yang peduli terhadap pendatang kamu ingin meyakinkan pendatang untuk mencoba {{.Name}}. Buat maximal 280 character. Tidak perlu mengucapkan selamat datang`
 
 	prompt, err := stringTmplRenderer(promptTmpl, dish)
 	if err != nil {
 		return "", fmt.Errorf("fail to render prompt: %w", err)
 	}
-	return CallOpenAI(w.ApiKey, prompt)
+	return callOpenAI(w.ApiKey, prompt)
 }
 
 func stringTmplRenderer(promptTmpl string, data interface{}) (string, error) {

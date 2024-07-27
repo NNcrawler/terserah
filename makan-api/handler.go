@@ -16,6 +16,14 @@ func HelloWorld(w http.ResponseWriter, r *http.Request) {
 }
 
 type Request struct {
+	Mode string          `json:"mode"`
+	Data json.RawMessage `json:"data"`
+}
+
+type ReviewSummarizerRequest struct {
+	Reviews []string `json:"reviews"`
+}
+type LocalGuideRecommendationRequest struct {
 	Name string `json:"name"`
 }
 
@@ -45,27 +53,51 @@ func CopyWriteFood(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	cpw := copywriter.Writer{
-		ApiKey: openAIKey,
-	}
+	var taskMap = initiateCopyWriteTasks(openAIKey)
 
-	response, err := cpw.AsLocalGuide(copywriter.DishToRecommend{
-		Name: req.Name,
-	})
-	if err != nil {
-		fmt.Println("Error:", err)
+	taskFn, ok := taskMap[req.Mode]
+	if !ok {
+		w.WriteHeader(http.StatusBadRequest)
+		fmt.Fprintf(w, "Invalid mode")
 		return
 	}
 
+	response, err := taskFn(req.Data)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		fmt.Fprintf(w, "Error: %v", err)
+		return
+	}
 	fmt.Fprintf(w, response)
 }
 
+func initiateCopyWriteTasks(openAIKey string) map[string]func([]byte) (string, error) {
+	return map[string]func([]byte) (string, error){
+		"reviewSummarizer": func(data []byte) (string, error) {
+			var taskParam ReviewSummarizerRequest
+			json.Unmarshal(data, &taskParam)
+
+			reviewSummarizer := copywriter.ReviewSummarizer{
+				ApiKey: openAIKey,
+			}
+			return reviewSummarizer.AsReviewer(taskParam.Reviews)
+		},
+		"localGuideRecommendation": func(data []byte) (string, error) {
+			var taskParam LocalGuideRecommendationRequest
+			json.Unmarshal(data, &taskParam)
+
+			cpw := copywriter.Writer{
+				ApiKey: openAIKey,
+			}
+
+			return cpw.AsLocalGuide(copywriter.DishToRecommend{
+				Name: taskParam.Name,
+			})
+		},
+	}
+}
+
 func handleCors(w http.ResponseWriter, r *http.Request) bool {
-	// Set CORS headers
-	// Allow all origins
-	// Allow specific methods
-	// Allow specific headers
-	// Handle preflight requests
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
