@@ -24,6 +24,12 @@ type Response struct {
 }
 
 func CopyWriteFood(w http.ResponseWriter, r *http.Request) {
+
+	shouldReturn := handleCors(w, r)
+	if shouldReturn {
+		return
+	}
+
 	openAIKey := os.Getenv("OPEN_AI_KEY")
 
 	body, err := io.ReadAll(r.Body)
@@ -52,4 +58,21 @@ func CopyWriteFood(w http.ResponseWriter, r *http.Request) {
 	}
 
 	fmt.Fprintf(w, response)
+}
+
+func handleCors(w http.ResponseWriter, r *http.Request) bool {
+	// Set CORS headers
+	// Allow all origins
+	// Allow specific methods
+	// Allow specific headers
+	// Handle preflight requests
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+
+	if r.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusOK)
+		return true
+	}
+	return false
 }
