@@ -49,7 +49,7 @@ func CopyWriteFood(w http.ResponseWriter, r *http.Request) {
 		ApiKey: openAIKey,
 	}
 
-	response, err := cpw.AsBestFriend(copywriter.DishToRecommend{
+	response, err := cpw.AsLocalGuide(copywriter.DishToRecommend{
 		Name: req.Name,
 	})
 	if err != nil {
