@@ -1,6 +1,6 @@
 // import { ReactComponent as MyIcon } from './path/to/my-icon.svg';
 
-function Card({ title, content, location: { googleMaps } }) {
+function Card({ title, reviews: { food, place }, location: { googleMaps } }) {
   return (
     <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 h-screen">
       <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -12,7 +12,10 @@ function Card({ title, content, location: { googleMaps } }) {
         </a>
       </div>
       <p class="font-normal text-gray-700 dark:text-gray-400">
-        <div dangerouslySetInnerHTML={{ __html: content[0]?.review }} />
+        <div dangerouslySetInnerHTML={{ __html: food }} />
+      </p>
+      <p class="font-normal text-gray-700 dark:text-gray-400">
+        <div dangerouslySetInnerHTML={{ __html: place }} />
       </p>
     </div>
   );

@@ -46,7 +46,7 @@ function App() {
                 <Card
                   key={i}
                   title={recommendation.name}
-                  content={reviews}
+                  reviews={recommendation.reviews}
                   location={recommendation.location}
                 />
               ))}
