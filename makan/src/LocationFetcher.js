@@ -14,7 +14,7 @@ function LocationFetcher() {
 
   return (
     <div>
-      <h1>Get User Location</h1>
+      <h1 className="text-2xl font-bold underline">Your Location</h1>
 
       {location.latitude && (
         <p>
