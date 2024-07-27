@@ -1,0 +1,205 @@
+{
+  "data": [
+    {
+      "name": "Transisi Kopi",
+      "dishType": [
+        "coffee",
+        "lunch",
+        "dinner"
+      ],
+      "priceLevel": "",
+      "location": {
+        "googleMaps": "https://maps.google.com/?cid=5288329331430372121",
+        "address": "Jl. Adiaksa II No.1, RT.5/RW.1, Lb. Bulus, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12440, Indonesia"
+      },
+      "reviews": [
+        "A hidden yet homey coffee shop. They have small indoor and large outdoor area. I was ordered cafe late banana. For me it's too sweet. Maybe for those who don't like sweet can ask it less sugar or less siroup. I was ordered ice americano as well and it tastes good. They have snacks and pasta with affordable price.",
+        "Very good cup of cappucino with high quality arabica coffee and high quality choice of milk brewed with one of the highest quality machine.. thanks a lot mas Gunawan",
+        "I tried the Aglio and their signature coconut coffee and the taste was into my liking. However the portion of the food was too small considering the price point.\n\nThe atmosphere was nice with good ambience music until a group of people came then talking and laughing obnoxiously, ruining the moment for other customers. I'd like it more if the staff would come to give them a few words.",
+        "such a homey and cozy place. food tasted like home styled. for all the prices all inexpensive. i like the ambience so much.\nif you are looking for a place to get a cup of coffee with homey situation you can definitely go over there.",
+        "kinda hidden gem bcs this cafe is in a someone’s house. but it feels so homey tho:D"
+      ]
+    },
+    {
+      "name": "Starbucks Menara FIF",
+      "dishType": [
+        "coffee",
+        "breakfast"
+      ],
+      "priceLevel": "PRICE_LEVEL_MODERATE",
+      "location": {
+        "googleMaps": "https://maps.google.com/?cid=13806827027623074708",
+        "address": "Jl. Tol Tahi Bonar Simatupang No.Kav. 15, RT.4/RW.1, Lb. Bulus, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12440, Indonesia"
+      },
+      "reviews": [
+        "I don't know how Starbucks create their stores, always feel the same. The taste, the surrounding, the staffs. Always be the first choice",
+        "Place is quite comfort, the service is quite different from the other starbucks coffeeshop and less friendly.",
+        "Cozy place to meeting",
+        "Nice ambiance for work and chat.",
+        "Ok"
+      ]
+    },
+    {
+      "name": "Bambaiya Cafe by Queen's Tandoor",
+      "dishType": [
+        "coffee",
+        "lunch",
+        "dinner",
+        "brunch"
+      ],
+      "priceLevel": "",
+      "location": {
+        "googleMaps": "https://maps.google.com/?cid=12994679103040020341",
+        "address": "South Quarter, Dome. Tower A, Jl. R.A. Kartini No.Kav 8, RT.10/RW.4, Cilandak Bar., Kec. Cilandak, Jakarta, Daerah Khusus Ibukota Jakarta 12430, Indonesia"
+      },
+      "reviews": [
+        "Great Indian food, as expected from Queen’s Tandoor, definitely worth the try. Tons of vegetarian options as well. You can ask recommendations from the waiters too. As for taste wise, I think they have blended in with Indonesian’s taste buds, so it’s not so strong. For the atmosphere itself, I love how cozy it is.",
+        "Freshly cooked Indian for lunch. They have lunch set for 135rb++ and it was great value. Garlic naan stood out, so yummy.",
+        "Garlic naan n chicken curry is my fav, good service, cozy place and very welcoming🥰❤️ The place looks more modern than other Indian Restaurant (maybe bcs its a cafe n a bar). Food price is not that expensive n accessible.\n\nIt's located in a mall(?) but the entrance is really narrow n hard to found, i almost missed it. But overall worth to try❤️",
+        "All food are good taste,with special ingredient from India",
+        "A Consistently Delightful Experience\n\nAs a frequent visitor to Jakarta, I've had the pleasure of dining at Restaurant Bambaiya numerous times over the past year. Each visit has been a delightful experience, making it my go-to spot in the city. From exceptional service to delicious cuisine, this restaurant never fails to impress.\n\nThe service at Restaurant Bambaiya is top-notch. The servers are quick, responsive, and incredibly attentive, ensuring that every need is promptly taken care of. During lunchtime, the specials they offer are not only excellent in taste but also provide great value for money. The speedy service allows patrons to enjoy a satisfying meal without compromising their busy schedules.\n\nOne aspect that stands out is the consistent quality of their dishes. Whether it's a classic favorite or a new menu item, the taste and presentation are always on point. I must highlight the Paneer Tikka, which, in my opinion, is the best I've had in Jakarta. The flavors are perfectly balanced, and the paneer is wonderfully marinated and cooked to perfection.\n\nFor those who enjoy the fresh air while dining, Restaurant Bambaiya offers a lovely outdoor seating area. It's a great option for a relaxed and enjoyable meal, especially in pleasant weather. Moreover, if you prefer indoor seating, they have plenty of comfortable space to accommodate guests."
+      ]
+    },
+    {
+      "name": "Chicken Porridge Mang Dadang",
+      "dishType": [
+        "coffee",
+        "breakfast",
+        "lunch",
+        "dinner"
+      ],
+      "priceLevel": "PRICE_LEVEL_MODERATE",
+      "location": {
+        "googleMaps": "https://maps.google.com/?cid=4111037031309279213",
+        "address": "Jl. H. Baun No.14, RT.6/RW.1, Lb. Bulus, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12440, Indonesia"
+      },
+      "reviews": [
+        "Decent chicken porridge\nPlace is clean and nice but a little cramped\nPrice is decent with 25k idr for bubur biasa",
+        "Ample dining space, lot of selection on their menu. We ordered a fried chicken (ayam kuning) \u0026 chicken porridge. They both taste nice, gotta add the porridge sambal together. The price range also considered affordable, nice place to dine after working hours.",
+        "Delicious chicken porridge with complete toppings in reasonable price. The new place across the old one is neat and clean with nice wooden dining tables. Love it!",
+        "Great place to enjoy your porridge urges. Plentiful portion, various toppings available for every preference.\n\nBubur Ayam: IDR 22k\nCheese stick: IDR 3k",
+        "Easy area location, lots of menu you can choose, when almost their closing time they may give you free snacks or xtra portion. Empal, Nila Bakar, Bubur, Dendeng, all are 👍🏼👍🏼"
+      ]
+    },
+    {
+      "name": "MYND space x Kopi Gawe",
+      "dishType": [
+        "coffee"
+      ],
+      "priceLevel": "",
+      "location": {
+        "googleMaps": "https://maps.google.com/?cid=2348476468727056728",
+        "address": "Jl. H. Niin No.5, RT.5/RW.1, Lb. Bulus, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12440, Indonesia"
+      },
+      "reviews": [
+        "Kopi so cheap , snacks affordable, place bit hidden but not far from the main road, parking lot is small, children friendly, great space for meeting or Work anywhere. And not be surprised with the toilet- it’s an old model of bathroom with bath-up 🛀😃",
+        "Suka banget kesini ketemuan sama temen dan buat playdate anak. Terus ikutan Outdoor Yoga hari Minggu pagi. Nyaman dan abis itu nyoba Pizzanya enak :)",
+        "Alhamdulillah, bisa bukber disini. Makananny enak terjangkau, dan berasa homey banget. Banyak permainan yang bisa dimainin sambil tunggu pesenan dateng",
+        "Coffe shop yang memiliki konsep seperti ngopi di rumah, sangat nyaman untuk ngopi disini, Harga nya terjangkau, jauh dari kebisingan kota.\nMari bercengkrama",
+        "pesan ayam goreng tulang lunak, lamaaa banget keluarnya.. mungkin kurang staff, mungkin sistemnya salah, mungkin ayamnya lagi dipijet biar lunak, mungkin tukang pijetnya belum datang...\n\nkapok kalau jam makan siang kantor kemari, padahal lokasi di dekat dengan perkantoran juga"
+      ]
+    },
+    {
+      "name": "Canabeans South Quarter",
+      "dishType": [
+        "coffee",
+        "breakfast",
+        "lunch",
+        "dinner",
+        "brunch"
+      ],
+      "priceLevel": "",
+      "location": {
+        "googleMaps": "https://maps.google.com/?cid=11474648577485210236",
+        "address": "PQ4P+54R South Quarter, Jl. R.A. Kartini Tower C, RT.10/RW.4, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12430, Indonesia"
+      },
+      "reviews": [
+        "Tried their Spaghetti Aglio Olio.. taste just okay, not too special. Their Cappuccino also taste okay.",
+        "Definisi : ada harga ada rasa dan kualitas, yes indeed..place is really cozy and comfy. Nice service..we dont have to wait too long for our orders\nLocated in tower c of south quarter..",
+        "Ended up having dinner at Canabeans - South Quarter. The place is not too crowded, the view is really good, cozy place. Especially if you have dinner here, the view is great for photos \u0026 it's really instagramable. Even though the price of the food can be considered pricy, it's worth it because it's really delicious, the menus are varied. This is a very suitable place for meetings \u0026 gatherings. The waiters are also very friendly.",
+        "Canabeans is a modern and comfortable cafe in South Quarter Tower C. The place consists of the indoor and outdoor area. They serve variant of Western, Asian, and fusion menu from the appetizer, salad, brunch, main dishes. They also serve coffee and non coffee drinks. For the coffee, variant of manual brew and beans are available as well.\n\nHere are what we tried :\n\nSalted Egg Yolk Cassava (IDR 55,000)\nThis is a unique fried cassava experience because this breaded tender cassava is covered with melted butter and salted egg yolk sauce. The sauces suit with the fried cassava well. Recommended!\n\nIndonesian Stir-Fry Noodle (IDR 52,000)\nA plate of Javanese style fried noodle with shredded chicken, fried egg, cabbage, tomato, vegetables, spring onions, fried onions, and crackers.\n\nMoroccan Mint (IDR 38,000)\nThis is one of the TWG tea here. So excited because this was my first time trying this premium tea brand. I chose one of their recommendation, which is Moroccan Mint. The light taste as the combination of TWG green tea and sahara mint.",
+        "A modern, cozy and spacious cafe inside South Quarter office complex. The latte here is good, quite strong but not too strong (I am a tea drinker), and smooth with a complex notes of palm sugar and hazelnut. The sourdough is quite good with mushroom n truffle, avocado and poached eggs. Good place for breakfast/afternoon meetings or working with your laptop."
+      ]
+    },
+    {
+      "name": "Kopi 360",
+      "dishType": [
+        "coffee",
+        "lunch",
+        "dinner"
+      ],
+      "priceLevel": "",
+      "location": {
+        "googleMaps": "https://maps.google.com/?cid=15169937817598197073",
+        "address": "5, Jl. H. Niin No.6, RT.5/RW.1, Lb. Bulus, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12440, Indonesia"
+      },
+      "reviews": [
+        "Great coffee place as a gem. Will be amazed by the price and size of coffee! Great rice bowl though",
+        "Good coffee, good food, cozy place. I recommend you try their cookies",
+        "The place located behind Klinik Mata Nusantara (KMN EyeCenter) Tb Simatupang. They have indoor \u0026 outdoor room. I ordered hot americano and surprisingly the mug is big enough for 15k of coffee. They also have some snack like gorengan. I think this is recommended place if you need to rest from traffic then get some coffe to relax",
+        "Spacious venue that has indoor and outdoor seatings that may be suitable for chilling out. Menu-wise, it has various caffeine servings, including signature ones. There are no single origin serving unfortunately",
+        "Serve good coffee. Recommend you to try the \"Vintage\" 😉\nNice place for hangout or as a workspace. Good music, friendly staff 👌🏽"
+      ]
+    },
+    {
+      "name": "Starbucks Coffee - South Quarter",
+      "dishType": [
+        "coffee",
+        "breakfast",
+        "lunch",
+        "brunch"
+      ],
+      "priceLevel": "PRICE_LEVEL_MODERATE",
+      "location": {
+        "googleMaps": "https://maps.google.com/?cid=15470380971545013947",
+        "address": "South Quarter Tower B, Jl. RA Kartini Kav 8, RT 10, 12430, RT.15/RW.4, West Cilandak, Cilandak, South Jakarta City, Jakarta 12430, Indonesia"
+      },
+      "reviews": [
+        "The South Quarter branch of Starbucks is nestled in a beautifully green complex, making it a delightful spot for coffee lovers. The area is lush and vibrant, though it can get a bit warm at times. Drink quality is exactly what you’d expect consistently from Starbucks.\n\nWhat truly sets this location apart, is the staff. They are genuinely bubbly, remember regulars by name, and are always attentive to details, ensuring any errors are swiftly and effectively addressed. Their exceptional service makes this Starbucks stand out among the many others I’ve visited.",
+        "Starbucks has a wide variety of coffee drinks that you can choose from. Some of the best Starbucks coffee drinks are Americano, Espresso Dark Roast, Iced Caramel Macchiato, etc. SQ Starbucks is one of the best place for working, or making content.",
+        "New spot found. Nice place, nice beverages. Staffs were humble.",
+        "Cozy atmosphere, warm wooden furniture and the floating aroma of good quality coffee.\nIt is within a business center, so the location itself is convenient for working people and travellers.\nIt's a pity the outdoor seating cannot be used on a raining season.",
+        "The place is great to spend your time after your working... The coffee, cake/cookies, even their chocolate is great.  The promo is fantastic."
+      ]
+    },
+    {
+      "name": "TOUS les JOURS South Quarter Dome",
+      "dishType": [
+        "breakfast"
+      ],
+      "priceLevel": "PRICE_LEVEL_MODERATE",
+      "location": {
+        "googleMaps": "https://maps.google.com/?cid=3129167757980704217",
+        "address": "Jl. R.A. Kartini No.Kav 8, RT.10/RW.4, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12430, Indonesia"
+      },
+      "reviews": [
+        "The place is in the South Quarter Tower B, it is a  quite cozy place, they have an indoor and outdoor space. Good for brunch, having a cup of coffee in the evening or having a quick meal, just grab your bread and you're good to go. The service was nice when i visited this place.\nThe variety of bread is not as many as if you find this place at the Mall of course, but it still have pretty good amount of variety.",
+        "They won't pick up the phone, the instagram admin are slow respond and even i tried to contact from other merchant and they give me the PIC number, but still no respond.\nI already contacted them from friday and still no respond whatsoever. what a service.",
+        "Their matcha is delicious. Very close to the entrance of B tower. If I'm not mistaken there is wifi but there's no port outlet",
+        "Good coffees here and you can have sitdown lunch service.",
+        "I love the bread and tha banana milk. Actually what i like the most is the sandwich however they do not have it anymore..so sad..wished the management agree to put the sandwich menu back"
+      ]
+    },
+    {
+      "name": "Tucano's Brazilian BBQ (Mercure Simatupang)",
+      "dishType": [
+        "coffee",
+        "lunch",
+        "dinner",
+        "brunch"
+      ],
+      "priceLevel": "",
+      "location": {
+        "googleMaps": "https://maps.google.com/?cid=2115000746199217371",
+        "address": "Jl. R.A. Kartini No.18, RT.7/RW.7, Lb. Bulus, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12440, Indonesia"
+      },
+      "reviews": [
+        "what a waste of money\ndespite of being a Brazilian BBQ place, the meat looks and tasted like slippers\ndry, smelly because it kept too long in the chiller / freezer (not fresh)\ni can only eat one bite of everything!\n\nalso, staff not helping, giving wrong information\nthey said buffet menu must be ordered like ala carte and will be portioned accordingly (one for each person, mini portion, etc)\nbut, portion they’re giving is like you’re a giant monster or you eat like 4 ppl\nthere’re so much food left to waste\ntheir supervisor said sorry, stating that the one that mislead us is only a training staff, so he apologized for it, but the milk already spilled\n\nthe only good things is their mushroom soup thats a little too salty😅\nand for the ambience, it’s marvelous\n\nfor 298++ /pax, you do have a lot more option better than this so called Brazilian BBQ\nbetter go somewhere else",
+        "This is situated in Mercure Hotel.\nI recently dined at Tucano’s Brazilian BBQ and had an amazing experience. The food was exceptional, with a variety of perfectly cooked meats and a great selection of sides. The standout was the service, especially from Dewi, who was incredibly attentive and knowledgeable. Her recommendations made my meal even better. The ambiance was vibrant and welcoming. Highly recommend visiting for a fantastic Brazilian BBQ experience!",
+        "Nice place with good food. Menus are Brazilian BBQ. They serve any kind of grilled meat. The taste are so-so. I love this place, specially they design and decorate with  stuff that that unusual, such as many kind of clocks, the big ones and small ones. They look retro stuffs, with bicycle and some old telephones. It is so instagraemable. Great place to hang out, of course. Listening some music,  taking pics, too.",
+        "One of the biggest letdowns I've ever experienced.\n\nI came during the off-time (3.30-ish) and a lot of the buffet food was either not ready or looked like leftovers from the lunch service.\n\nThere was only little food left in the buffet, and there were no signs of refilling it until the time for dinner service approaches.\n\nThere was a huge bowl of es campur, which was no longer \"es\", and was sitting there in the open, lukewarm.\n\nThe ice cream in the fridge was mostly melted, and was unfit for consumption.\n\nThe BBQ sauce was very sour, as if a fresh lemon was just squeezed inside, either to add flavor or to mask something, I'm not sure. The other sauces tasted mostly the same (bbq and black pepper) with no distinction.\n\nThe saving grace was the meat, which was good, although some are more strongly seasoned than others. The service was also top-notch, but it was to be expected from a restaurant that is tied to a hotel.\n\nI recommend you to come to dine here only during the peak hours, because otherwise I'm sure that you will feel nothing but let down by the lack of life of the restaurant.\n\nOh, and the A/C is quite hot as well.",
+        "We take dinner here, AYCE. It's all deliciois and flavorful. Take more in top sirloin."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1358 @@
+[
+    {
+        "name": "places/ChIJA4KwIabxaS4RGbMvF4LrY0k",
+        "id": "ChIJA4KwIabxaS4RGbMvF4LrY0k",
+        "displayName": {
+            "languageCode": "en",
+            "text": "Transisi Kopi"
+        },
+        "types": [
+            "cafe",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ],
+        "primaryType": "cafe",
+        "primaryTypeDisplayName": {
+            "languageCode": "en",
+            "text": "Cafe"
+        },
+        "internationalPhoneNumber": "",
+        "formattedAddress": "Jl. Adiaksa II No.1, RT.5/RW.1, Lb. Bulus, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12440, Indonesia",
+        "addressComponents": null,
+        "location": {
+            "latitude": -6.2929543,
+            "longitude": 106.7809792
+        },
+        "rating": 4.8,
+        "googleMapsUri": "https://maps.google.com/?cid=5288329331430372121",
+        "regularOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "photos": [
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            }
+        ],
+        "priceLevel": "",
+        "currentOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "editorialSummary": {
+            "languageCode": "",
+            "text": ""
+        },
+        "generativeSummary": {
+            "summary": ""
+        },
+        "areaSummary": {
+            "summary": ""
+        },
+        "userRatingCount": 480,
+        "takeout": false,
+        "delivery": false,
+        "dineIn": false,
+        "curbsidePickup": false,
+        "reservable": false,
+        "servesBreakfast": false,
+        "servesLunch": false,
+        "servesDinner": false,
+        "servesBeer": false,
+        "servesWine": false,
+        "servesBrunch": false,
+        "servesVegetarianFood": false,
+        "outdoorSeating": false,
+        "liveMusic": false,
+        "menuForChildren": false,
+        "servesCocktails": false,
+        "servesDessert": false,
+        "servesCoffee": false,
+        "goodForChildren": false,
+        "allowsDogs": false,
+        "restroom": false,
+        "goodForGroups": false,
+        "goodForWatchingSports": false,
+        "accessibilityOptions": {
+            "wheelchairAccessible": false
+        }
+    },
+    {
+        "name": "places/ChIJE_ih9tTxaS4RlFu8qAe0m78",
+        "id": "ChIJE_ih9tTxaS4RlFu8qAe0m78",
+        "displayName": {
+            "languageCode": "en",
+            "text": "Starbucks Menara FIF"
+        },
+        "types": [
+            "coffee_shop",
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "primaryType": "coffee_shop",
+        "primaryTypeDisplayName": {
+            "languageCode": "en",
+            "text": "Coffee shop"
+        },
+        "internationalPhoneNumber": "",
+        "formattedAddress": "Jl. Tol Tahi Bonar Simatupang No.Kav. 15, RT.4/RW.1, Lb. Bulus, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12440, Indonesia",
+        "addressComponents": null,
+        "location": {
+            "latitude": -6.2925553,
+            "longitude": 106.7836148
+        },
+        "rating": 4.3,
+        "googleMapsUri": "https://maps.google.com/?cid=13806827027623074708",
+        "regularOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "photos": [
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            }
+        ],
+        "priceLevel": "",
+        "currentOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "editorialSummary": {
+            "languageCode": "",
+            "text": ""
+        },
+        "generativeSummary": {
+            "summary": ""
+        },
+        "areaSummary": {
+            "summary": ""
+        },
+        "userRatingCount": 48,
+        "takeout": false,
+        "delivery": false,
+        "dineIn": false,
+        "curbsidePickup": false,
+        "reservable": false,
+        "servesBreakfast": false,
+        "servesLunch": false,
+        "servesDinner": false,
+        "servesBeer": false,
+        "servesWine": false,
+        "servesBrunch": false,
+        "servesVegetarianFood": false,
+        "outdoorSeating": false,
+        "liveMusic": false,
+        "menuForChildren": false,
+        "servesCocktails": false,
+        "servesDessert": false,
+        "servesCoffee": false,
+        "goodForChildren": false,
+        "allowsDogs": false,
+        "restroom": false,
+        "goodForGroups": false,
+        "goodForWatchingSports": false,
+        "accessibilityOptions": {
+            "wheelchairAccessible": false
+        }
+    },
+    {
+        "name": "places/ChIJL0KotdvxaS4RdV_kostfVrQ",
+        "id": "ChIJL0KotdvxaS4RdV_kostfVrQ",
+        "displayName": {
+            "languageCode": "id",
+            "text": "Bambaiya Cafe by Queen's Tandoor"
+        },
+        "types": [
+            "cafe",
+            "indian_restaurant",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ],
+        "primaryType": "indian_restaurant",
+        "primaryTypeDisplayName": {
+            "languageCode": "en",
+            "text": "Indian restaurant"
+        },
+        "internationalPhoneNumber": "",
+        "formattedAddress": "South Quarter, Dome. Tower A, Jl. R.A. Kartini No.Kav 8, RT.10/RW.4, Cilandak Bar., Kec. Cilandak, Jakarta, Daerah Khusus Ibukota Jakarta 12430, Indonesia",
+        "addressComponents": null,
+        "location": {
+            "latitude": -6.293995799999999,
+            "longitude": 106.78414439999999
+        },
+        "rating": 4.4,
+        "googleMapsUri": "https://maps.google.com/?cid=12994679103040020341",
+        "regularOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "photos": [
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            }
+        ],
+        "priceLevel": "",
+        "currentOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "editorialSummary": {
+            "languageCode": "",
+            "text": ""
+        },
+        "generativeSummary": {
+            "summary": ""
+        },
+        "areaSummary": {
+            "summary": ""
+        },
+        "userRatingCount": 457,
+        "takeout": false,
+        "delivery": false,
+        "dineIn": false,
+        "curbsidePickup": false,
+        "reservable": false,
+        "servesBreakfast": false,
+        "servesLunch": false,
+        "servesDinner": false,
+        "servesBeer": false,
+        "servesWine": false,
+        "servesBrunch": false,
+        "servesVegetarianFood": false,
+        "outdoorSeating": false,
+        "liveMusic": false,
+        "menuForChildren": false,
+        "servesCocktails": false,
+        "servesDessert": false,
+        "servesCoffee": false,
+        "goodForChildren": false,
+        "allowsDogs": false,
+        "restroom": false,
+        "goodForGroups": false,
+        "goodForWatchingSports": false,
+        "accessibilityOptions": {
+            "wheelchairAccessible": false
+        }
+    },
+    {
+        "name": "places/ChIJ9ee5gtDxaS4R7X-qFWZWDTk",
+        "id": "ChIJ9ee5gtDxaS4R7X-qFWZWDTk",
+        "displayName": {
+            "languageCode": "en",
+            "text": "Chicken Porridge Mang Dadang"
+        },
+        "types": [
+            "breakfast_restaurant",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ],
+        "primaryType": "restaurant",
+        "primaryTypeDisplayName": {
+            "languageCode": "en",
+            "text": "Restaurant"
+        },
+        "internationalPhoneNumber": "",
+        "formattedAddress": "Jl. H. Baun No.14, RT.6/RW.1, Lb. Bulus, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12440, Indonesia",
+        "addressComponents": null,
+        "location": {
+            "latitude": -6.2929236,
+            "longitude": 106.7821278
+        },
+        "rating": 4.6,
+        "googleMapsUri": "https://maps.google.com/?cid=4111037031309279213",
+        "regularOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "photos": [
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            }
+        ],
+        "priceLevel": "",
+        "currentOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "editorialSummary": {
+            "languageCode": "",
+            "text": ""
+        },
+        "generativeSummary": {
+            "summary": ""
+        },
+        "areaSummary": {
+            "summary": ""
+        },
+        "userRatingCount": 682,
+        "takeout": false,
+        "delivery": false,
+        "dineIn": false,
+        "curbsidePickup": false,
+        "reservable": false,
+        "servesBreakfast": false,
+        "servesLunch": false,
+        "servesDinner": false,
+        "servesBeer": false,
+        "servesWine": false,
+        "servesBrunch": false,
+        "servesVegetarianFood": false,
+        "outdoorSeating": false,
+        "liveMusic": false,
+        "menuForChildren": false,
+        "servesCocktails": false,
+        "servesDessert": false,
+        "servesCoffee": false,
+        "goodForChildren": false,
+        "allowsDogs": false,
+        "restroom": false,
+        "goodForGroups": false,
+        "goodForWatchingSports": false,
+        "accessibilityOptions": {
+            "wheelchairAccessible": false
+        }
+    },
+    {
+        "name": "places/ChIJiaGeY9DxaS4RWAnX0ed2lyA",
+        "id": "ChIJiaGeY9DxaS4RWAnX0ed2lyA",
+        "displayName": {
+            "languageCode": "en",
+            "text": "MYND space x Kopi Gawe"
+        },
+        "types": [
+            "coffee_shop",
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "primaryType": "coffee_shop",
+        "primaryTypeDisplayName": {
+            "languageCode": "en",
+            "text": "Coffee shop"
+        },
+        "internationalPhoneNumber": "",
+        "formattedAddress": "Jl. H. Niin No.5, RT.5/RW.1, Lb. Bulus, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12440, Indonesia",
+        "addressComponents": null,
+        "location": {
+            "latitude": -6.2924716,
+            "longitude": 106.7816165
+        },
+        "rating": 4.3,
+        "googleMapsUri": "https://maps.google.com/?cid=2348476468727056728",
+        "regularOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "photos": [
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            }
+        ],
+        "priceLevel": "",
+        "currentOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "editorialSummary": {
+            "languageCode": "",
+            "text": ""
+        },
+        "generativeSummary": {
+            "summary": ""
+        },
+        "areaSummary": {
+            "summary": ""
+        },
+        "userRatingCount": 20,
+        "takeout": false,
+        "delivery": false,
+        "dineIn": false,
+        "curbsidePickup": false,
+        "reservable": false,
+        "servesBreakfast": false,
+        "servesLunch": false,
+        "servesDinner": false,
+        "servesBeer": false,
+        "servesWine": false,
+        "servesBrunch": false,
+        "servesVegetarianFood": false,
+        "outdoorSeating": false,
+        "liveMusic": false,
+        "menuForChildren": false,
+        "servesCocktails": false,
+        "servesDessert": false,
+        "servesCoffee": false,
+        "goodForChildren": false,
+        "allowsDogs": false,
+        "restroom": false,
+        "goodForGroups": false,
+        "goodForWatchingSports": false,
+        "accessibilityOptions": {
+            "wheelchairAccessible": false
+        }
+    },
+    {
+        "name": "places/ChIJq5ZuDCjxaS4RfIJy_xUkPp8",
+        "id": "ChIJq5ZuDCjxaS4RfIJy_xUkPp8",
+        "displayName": {
+            "languageCode": "en",
+            "text": "Canabeans South Quarter"
+        },
+        "types": [
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ],
+        "primaryType": "restaurant",
+        "primaryTypeDisplayName": {
+            "languageCode": "en",
+            "text": "Restaurant"
+        },
+        "internationalPhoneNumber": "",
+        "formattedAddress": "PQ4P+54R South Quarter, Jl. R.A. Kartini Tower C, RT.10/RW.4, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12430, Indonesia",
+        "addressComponents": null,
+        "location": {
+            "latitude": -6.2945177999999995,
+            "longitude": 106.78526540000001
+        },
+        "rating": 4.9,
+        "googleMapsUri": "https://maps.google.com/?cid=11474648577485210236",
+        "regularOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "photos": [
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            }
+        ],
+        "priceLevel": "",
+        "currentOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "editorialSummary": {
+            "languageCode": "",
+            "text": ""
+        },
+        "generativeSummary": {
+            "summary": ""
+        },
+        "areaSummary": {
+            "summary": ""
+        },
+        "userRatingCount": 414,
+        "takeout": false,
+        "delivery": false,
+        "dineIn": false,
+        "curbsidePickup": false,
+        "reservable": false,
+        "servesBreakfast": false,
+        "servesLunch": false,
+        "servesDinner": false,
+        "servesBeer": false,
+        "servesWine": false,
+        "servesBrunch": false,
+        "servesVegetarianFood": false,
+        "outdoorSeating": false,
+        "liveMusic": false,
+        "menuForChildren": false,
+        "servesCocktails": false,
+        "servesDessert": false,
+        "servesCoffee": false,
+        "goodForChildren": false,
+        "allowsDogs": false,
+        "restroom": false,
+        "goodForGroups": false,
+        "goodForWatchingSports": false,
+        "accessibilityOptions": {
+            "wheelchairAccessible": false
+        }
+    },
+    {
+        "name": "places/ChIJn9dh5ufxaS4RUX20QhJyhtI",
+        "id": "ChIJn9dh5ufxaS4RUX20QhJyhtI",
+        "displayName": {
+            "languageCode": "id",
+            "text": "Kopi 360"
+        },
+        "types": [
+            "coffee_shop",
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "primaryType": "coffee_shop",
+        "primaryTypeDisplayName": {
+            "languageCode": "en",
+            "text": "Coffee shop"
+        },
+        "internationalPhoneNumber": "",
+        "formattedAddress": "5, Jl. H. Niin No.6, RT.5/RW.1, Lb. Bulus, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12440, Indonesia",
+        "addressComponents": null,
+        "location": {
+            "latitude": -6.2924665,
+            "longitude": 106.7820138
+        },
+        "rating": 4.5,
+        "googleMapsUri": "https://maps.google.com/?cid=15169937817598197073",
+        "regularOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "photos": [
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            }
+        ],
+        "priceLevel": "",
+        "currentOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "editorialSummary": {
+            "languageCode": "",
+            "text": ""
+        },
+        "generativeSummary": {
+            "summary": ""
+        },
+        "areaSummary": {
+            "summary": ""
+        },
+        "userRatingCount": 195,
+        "takeout": false,
+        "delivery": false,
+        "dineIn": false,
+        "curbsidePickup": false,
+        "reservable": false,
+        "servesBreakfast": false,
+        "servesLunch": false,
+        "servesDinner": false,
+        "servesBeer": false,
+        "servesWine": false,
+        "servesBrunch": false,
+        "servesVegetarianFood": false,
+        "outdoorSeating": false,
+        "liveMusic": false,
+        "menuForChildren": false,
+        "servesCocktails": false,
+        "servesDessert": false,
+        "servesCoffee": false,
+        "goodForChildren": false,
+        "allowsDogs": false,
+        "restroom": false,
+        "goodForGroups": false,
+        "goodForWatchingSports": false,
+        "accessibilityOptions": {
+            "wheelchairAccessible": false
+        }
+    },
+    {
+        "name": "places/ChIJAQAAAOfxaS4Ruy7nLIfVsdY",
+        "id": "ChIJAQAAAOfxaS4Ruy7nLIfVsdY",
+        "displayName": {
+            "languageCode": "en",
+            "text": "Starbucks Coffee - South Quarter"
+        },
+        "types": [
+            "coffee_shop",
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "primaryType": "coffee_shop",
+        "primaryTypeDisplayName": {
+            "languageCode": "en",
+            "text": "Coffee shop"
+        },
+        "internationalPhoneNumber": "",
+        "formattedAddress": "South Quarter Tower B, Jl. RA Kartini Kav 8, RT 10, 12430, RT.15/RW.4, West Cilandak, Cilandak, South Jakarta City, Jakarta 12430, Indonesia",
+        "addressComponents": null,
+        "location": {
+            "latitude": -6.2939127,
+            "longitude": 106.78486099999999
+        },
+        "rating": 4.7,
+        "googleMapsUri": "https://maps.google.com/?cid=15470380971545013947",
+        "regularOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "photos": [
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            }
+        ],
+        "priceLevel": "",
+        "currentOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "editorialSummary": {
+            "languageCode": "",
+            "text": ""
+        },
+        "generativeSummary": {
+            "summary": ""
+        },
+        "areaSummary": {
+            "summary": ""
+        },
+        "userRatingCount": 450,
+        "takeout": false,
+        "delivery": false,
+        "dineIn": false,
+        "curbsidePickup": false,
+        "reservable": false,
+        "servesBreakfast": false,
+        "servesLunch": false,
+        "servesDinner": false,
+        "servesBeer": false,
+        "servesWine": false,
+        "servesBrunch": false,
+        "servesVegetarianFood": false,
+        "outdoorSeating": false,
+        "liveMusic": false,
+        "menuForChildren": false,
+        "servesCocktails": false,
+        "servesDessert": false,
+        "servesCoffee": false,
+        "goodForChildren": false,
+        "allowsDogs": false,
+        "restroom": false,
+        "goodForGroups": false,
+        "goodForWatchingSports": false,
+        "accessibilityOptions": {
+            "wheelchairAccessible": false
+        }
+    },
+    {
+        "name": "places/ChIJpWr2NdrxaS4R2Z0LMX8JbSs",
+        "id": "ChIJpWr2NdrxaS4R2Z0LMX8JbSs",
+        "displayName": {
+            "languageCode": "en",
+            "text": "TOUS les JOURS South Quarter Dome"
+        },
+        "types": [
+            "bakery",
+            "cafe",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "primaryType": "bakery",
+        "primaryTypeDisplayName": {
+            "languageCode": "en",
+            "text": "Bakery"
+        },
+        "internationalPhoneNumber": "",
+        "formattedAddress": "Jl. R.A. Kartini No.Kav 8, RT.10/RW.4, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12430, Indonesia",
+        "addressComponents": null,
+        "location": {
+            "latitude": -6.2938319,
+            "longitude": 106.7852142
+        },
+        "rating": 4.4,
+        "googleMapsUri": "https://maps.google.com/?cid=3129167757980704217",
+        "regularOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "photos": [
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            }
+        ],
+        "priceLevel": "",
+        "currentOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "editorialSummary": {
+            "languageCode": "",
+            "text": ""
+        },
+        "generativeSummary": {
+            "summary": ""
+        },
+        "areaSummary": {
+            "summary": ""
+        },
+        "userRatingCount": 141,
+        "takeout": false,
+        "delivery": false,
+        "dineIn": false,
+        "curbsidePickup": false,
+        "reservable": false,
+        "servesBreakfast": false,
+        "servesLunch": false,
+        "servesDinner": false,
+        "servesBeer": false,
+        "servesWine": false,
+        "servesBrunch": false,
+        "servesVegetarianFood": false,
+        "outdoorSeating": false,
+        "liveMusic": false,
+        "menuForChildren": false,
+        "servesCocktails": false,
+        "servesDessert": false,
+        "servesCoffee": false,
+        "goodForChildren": false,
+        "allowsDogs": false,
+        "restroom": false,
+        "goodForGroups": false,
+        "goodForWatchingSports": false,
+        "accessibilityOptions": {
+            "wheelchairAccessible": false
+        }
+    },
+    {
+        "name": "places/ChIJI_GyKX_xaS4R2_TjEPn9WR0",
+        "id": "ChIJI_GyKX_xaS4R2_TjEPn9WR0",
+        "displayName": {
+            "languageCode": "en",
+            "text": "Tucano's Brazilian BBQ (Mercure Simatupang)"
+        },
+        "types": [
+            "brazilian_restaurant",
+            "restaurant",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ],
+        "primaryType": "brazilian_restaurant",
+        "primaryTypeDisplayName": {
+            "languageCode": "en",
+            "text": "Brazilian restaurant"
+        },
+        "internationalPhoneNumber": "",
+        "formattedAddress": "Jl. R.A. Kartini No.18, RT.7/RW.7, Lb. Bulus, Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12440, Indonesia",
+        "addressComponents": null,
+        "location": {
+            "latitude": -6.290903999999999,
+            "longitude": 106.78000039999999
+        },
+        "rating": 4.2,
+        "googleMapsUri": "https://maps.google.com/?cid=2115000746199217371",
+        "regularOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "photos": [
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            },
+            {
+                "height": 0,
+                "htmlAttributions": null,
+                "photoReference": "",
+                "width": 0
+            }
+        ],
+        "priceLevel": "",
+        "currentOpeningHours": {
+            "openNow": false,
+            "weekdayText": null
+        },
+        "editorialSummary": {
+            "languageCode": "",
+            "text": ""
+        },
+        "generativeSummary": {
+            "summary": ""
+        },
+        "areaSummary": {
+            "summary": ""
+        },
+        "userRatingCount": 180,
+        "takeout": false,
+        "delivery": false,
+        "dineIn": false,
+        "curbsidePickup": false,
+        "reservable": false,
+        "servesBreakfast": false,
+        "servesLunch": false,
+        "servesDinner": false,
+        "servesBeer": false,
+        "servesWine": false,
+        "servesBrunch": false,
+        "servesVegetarianFood": false,
+        "outdoorSeating": false,
+        "liveMusic": false,
+        "menuForChildren": false,
+        "servesCocktails": false,
+        "servesDessert": false,
+        "servesCoffee": false,
+        "goodForChildren": false,
+        "allowsDogs": false,
+        "restroom": false,
+        "goodForGroups": false,
+        "goodForWatchingSports": false,
+        "accessibilityOptions": {
+            "wheelchairAccessible": false
+        }
+    }
+]

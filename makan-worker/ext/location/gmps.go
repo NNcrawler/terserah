@@ -7,6 +7,8 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+
+	"github.com/ahmadnaufal/recommender-worker/model"
 )
 
 type PlaceResponse struct {
@@ -21,12 +23,21 @@ var expectedResponseFields = []string{
 	"places.location",
 	"places.name",
 	"places.photos",
-	"places.plusCode",
+	"places.types",
 	"places.primaryType",
 	"places.primaryTypeDisplayName",
-	"places.shortFormattedAddress",
+	"places.internationalPhoneNumber",
 	"places.location",
 	"places.rating",
+	"places.userRatingCount",
+	"places.currentOpeningHours",
+	"places.servesBreakfast",
+	"places.servesLunch",
+	"places.servesDinner",
+	"places.servesVegetarianFood",
+	"places.servesBrunch",
+	"places.servesCoffee",
+	"places.priceLevel",
 	"places.reviews",
 }
 
@@ -46,7 +57,7 @@ func New(host, apiKey string) GoogleLocationAPI {
 	}
 }
 
-func (g *GoogleLocationAPI) GetNearby(ctx context.Context, latitude, longitude, radius float64, numOfRecommendation uint) ([]Place, error) {
+func (g *GoogleLocationAPI) GetNearby(ctx context.Context, latitude, longitude, radius float64, numOfRecommendation uint) ([]model.Place, error) {
 	requestURL := fmt.Sprintf("%s/v1/places:searchNearby", g.host)
 	requestNearby := Request{
 		IncludedTypes:  includedFnbTypes,
@@ -79,5 +90,57 @@ func (g *GoogleLocationAPI) GetNearby(ctx context.Context, latitude, longitude, 
 		return nil, err
 	}
 
-	return placesResp.Places, nil
+	modelPlaces := []model.Place{}
+	for _, lpc := range placesResp.Places {
+		modelPlaces = append(modelPlaces, placeResponseToPlaceModel(lpc))
+	}
+
+	return modelPlaces, nil
+}
+
+func placeResponseToPlaceModel(place Place) model.Place {
+	var res model.Place
+
+	res.ID = place.ID
+	res.PlaceName = place.DisplayName.Text
+	res.GoogleMapsURI = place.GoogleMapsUri
+	res.Address = place.FormattedAddress
+	res.Latitude = place.Location.Latitude
+	res.Longitude = place.Location.Longitude
+	res.Types = place.Types
+	res.PrimaryType = place.PrimaryType
+	res.PhoneNumber = place.InternationalPhoneNumber
+	res.IsOpen = place.CurrentOpeningHours.OpenNow
+	res.Rating = place.Rating
+	res.UserRatingCount = place.UserRatingCount
+	res.PriceLevel = place.PriceLevel
+
+	res.Tags = []string{}
+	if place.ServesCoffee {
+		res.Tags = append(res.Tags, "coffee")
+	}
+	if place.ServesBreakfast {
+		res.Tags = append(res.Tags, "breakfast")
+	}
+	if place.ServesLunch {
+		res.Tags = append(res.Tags, "lunch")
+	}
+	if place.ServesDinner {
+		res.Tags = append(res.Tags, "dinner")
+	}
+	if place.ServesBrunch {
+		res.Tags = append(res.Tags, "brunch")
+	}
+	if place.ServesVegetarianFood {
+		res.Tags = append(res.Tags, "vegetarian")
+	}
+	if place.ServesDessert {
+		res.Tags = append(res.Tags, "dessert")
+	}
+
+	for _, r := range place.Reviews {
+		res.Reviews = append(res.Reviews, r.Text.Text)
+	}
+
+	return res
 }

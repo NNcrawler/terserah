@@ -1,34 +1,20 @@
 package main
 
 import (
-	"context"
-	"fmt"
+	"log"
+	"os"
 
-	"github.com/ahmadnaufal/recommender-worker/ext/location"
-	"github.com/ahmadnaufal/recommender-worker/ext/weather"
-	"github.com/ahmadnaufal/recommender-worker/server"
+	"github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
+	_ "github.com/ahmadnaufal/recommender-worker"
 )
 
 func main() {
-	cfg, err := server.LoadConfig()
-	if err != nil {
-		panic(err)
+	// Use PORT environment variable, or default to 8080.
+	port := "8080"
+	if envPort := os.Getenv("PORT"); envPort != "" {
+		port = envPort
 	}
-
-	locationProv := location.New(cfg.Google.Host, cfg.Google.APIKey)
-	weatherProv := weather.New(cfg.Weather.Host, cfg.Weather.APIKey)
-
-	latitude := -6.291456
-	longitude := 106.7840557
-	radius := 500.0
-	var numOfRecommendation uint = 10
-	ctx := context.Background()
-	places, err := locationProv.GetNearby(ctx, latitude, longitude, radius, numOfRecommendation)
-	if err != nil {
-		panic(err)
-	}
-
-	for _, p := range places {
-		fmt.Println(p.String())
+	if err := funcframework.Start(port); err != nil {
+		log.Fatalf("funcframework.Start: %v\n", err)
 	}
 }
