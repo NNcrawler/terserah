@@ -26,7 +26,7 @@ Return the summaries in a JSON. Where category becomes the key and the review su
 		fmt.Print(err)
 	}
 	res, err := client.Send(context.Background(), &chatgpt.ChatCompletionRequest{
-		Model: chatgpt.GPT4,
+		Model: chatgpt.GPT35Turbo,
 		Messages: []chatgpt.ChatMessage{
 			{
 				Role:    chatgpt.ChatGPTModelRoleSystem,

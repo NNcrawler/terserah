@@ -22,12 +22,12 @@ func init() {
 }
 
 type PlaceResponse struct {
-	Name       string        `json:"name"`
-	Tags       []string      `json:"tags"`
-	DishType   []string      `json:"dishType"`
-	PriceLevel string        `json:"priceLevel"`
-	Location   PlaceLocation `json:"location"`
-	Reviews    []string      `json:"reviews"`
+	Name       string            `json:"name"`
+	Tags       []string          `json:"tags"`
+	DishType   []string          `json:"dishType"`
+	PriceLevel string            `json:"priceLevel"`
+	Location   PlaceLocation     `json:"location"`
+	Reviews    map[string]string `json:"reviews"`
 }
 
 type PlaceLocation struct {
@@ -118,7 +118,10 @@ func placeToResponse(place model.Place) PlaceResponse {
 			GoogleMaps: place.GoogleMapsURI,
 			Address:    place.Address,
 		},
-		Reviews: place.Reviews,
+		Reviews: map[string]string{
+			"food":  place.ReviewsSummary.Food,
+			"place": place.ReviewsSummary.Place,
+		},
 	}
 }
 

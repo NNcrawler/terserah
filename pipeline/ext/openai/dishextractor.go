@@ -30,7 +30,7 @@ func (c DishExtractor) GetPossibleFoodsFromPlace(ctx context.Context, reviews []
 		fmt.Print(err)
 	}
 	res, err := client.Send(context.Background(), &chatgpt.ChatCompletionRequest{
-		Model: chatgpt.GPT4,
+		Model: chatgpt.GPT35Turbo,
 		Messages: []chatgpt.ChatMessage{
 			{
 				Role:    chatgpt.ChatGPTModelRoleSystem,
