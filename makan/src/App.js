@@ -4,6 +4,7 @@ import { useGeolocation } from '@uidotdev/usehooks';
 import fetchFoodCopyWrite from './api/copywriter';
 import { useEffect, useState } from 'react';
 import fetchRecommendations from './api/recommendation';
+import Card from './components/card';
 
 function App() {
   const location = useGeolocation();
@@ -32,12 +33,12 @@ function App() {
     <div className="App">
       <div class="flex items-center justify-center h-screen">
         <div>
-          <LocationFetcher location={location} />
-          {recommendations.length > 0 &&
+          {/* <LocationFetcher location={location} /> */}
+          {/* {recommendations.length > 0 &&
             recommendations.map((recommendation, i) => (
               <p id={i}>{recommendation.name}</p>
-            ))}
-          {copyWrite && <p>{copyWrite}</p>}
+            ))} */}
+          {copyWrite && <Card title={recommendations[0].name} content={<p>{copyWrite}</p>} />}
         </div>
       </div>
     </div>

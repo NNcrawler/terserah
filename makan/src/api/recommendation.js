@@ -4,7 +4,7 @@ function fetchRecommendations({ latitude = 0, longitude = 0 }) {
       const response = {
         data: [
           {
-            name: 'Bakso Join Blok S',
+            name: 'Bakso Joni Blok S',
             dishType: 'bakso',
             location: {
               googleMaps: 'https://goo.gl/maps/1J1J1J1J1J1J1J1J1',
