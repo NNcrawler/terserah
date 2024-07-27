@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
-import fetchRecommendations from './api/recommendation';
 import './App.css';
 import LocationFetcher from './LocationFetcher';
 import { useGeolocation } from '@uidotdev/usehooks';
+import fetchFoodCopyWrite from './api/copywriter';
+import { useEffect, useState } from 'react';
+import fetchRecommendations from './api/recommendation';
 
 function App() {
   const location = useGeolocation();
@@ -16,6 +17,17 @@ function App() {
     }
   }, [location]);
 
+  const [copyWrite, setCopyWrite] = useState('');
+  useEffect(() => {
+    if (recommendations.length > 0) {
+      fetchFoodCopyWrite({ name: recommendations[0].name }).then(
+        (copyWrite) => {
+          setCopyWrite(copyWrite);
+        }
+      );
+    }
+  }, [recommendations]);
+
   return (
     <div className="App">
       <div class="flex items-center justify-center h-screen">
@@ -25,6 +37,7 @@ function App() {
             recommendations.map((recommendation, i) => (
               <p id={i}>{recommendation.name}</p>
             ))}
+          {copyWrite && <p>{copyWrite}</p>}
         </div>
       </div>
     </div>

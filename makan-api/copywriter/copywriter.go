@@ -31,8 +31,8 @@ type Writer struct {
 	ApiKey string
 }
 
-func (w Writer) AsBestFriend(dish DishToRecommend) (string, error) {
-	const promptTmpl = `Buat copywriting untuk jualan sebagai berikut: Anggap kamu adalah seorang sahabat. Sebagai sahabat kamu ingin meyakinkan sahabatmu untuk mencoba {{.Name}}`
+func (w Writer) AsLocalGuide(dish DishToRecommend) (string, error) {
+	const promptTmpl = `Buat copywriting untuk jualan sebagai berikut: Anggap kamu adalah guide lokal. Sebagai guide lokal yang peduli terhadap pendatang kamu ingin meyakinkan pendatang untuk mencoba {{.Name}}`
 
 	prompt, err := stringTmplRenderer(promptTmpl, dish)
 	if err != nil {
