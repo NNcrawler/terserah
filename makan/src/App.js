@@ -1,18 +1,24 @@
 import './App.css';
-import LocationFetcher from './LocationFetcher';
+
 import { useGeolocation } from '@uidotdev/usehooks';
 import fetchFoodCopyWrite from './api/copywriter';
 import { useEffect, useState } from 'react';
 import fetchRecommendations from './api/recommendation';
 import Card from './components/card';
+import SlideShow from './components/slider';
 
 function App() {
   const location = useGeolocation();
 
   const [recommendations, setRecommendations] = useState([]);
   useEffect(() => {
-    if (location.latitude && location.longitude) {
-      fetchRecommendations(location).then((response) => {
+    const latitude = location.latitude;
+    const longitude = location.longitude;
+    if (latitude && longitude) {
+      fetchRecommendations({
+        longitude: longitude,
+        latitude: latitude,
+      }).then((response) => {
         setRecommendations(response.data);
       });
     }
@@ -31,14 +37,20 @@ function App() {
 
   return (
     <div className="App">
-      <div class="flex items-center justify-center h-screen">
-        <div>
-          {/* <LocationFetcher location={location} /> */}
-          {/* {recommendations.length > 0 &&
-            recommendations.map((recommendation, i) => (
-              <p id={i}>{recommendation.name}</p>
-            ))} */}
-          {copyWrite && <Card title={recommendations[0].name} content={<p>{copyWrite}</p>} />}
+      <div className="flex items-center justify-center h-screen">
+        <div className="max-w-sm h-screen">
+          {copyWrite && (
+            <SlideShow slides={recommendations}>
+              {recommendations.map((recommendation, i) => (
+                <Card
+                  key={i}
+                  title={recommendation.name}
+                  content={<p>{copyWrite}</p>}
+                  location={recommendation.location}
+                />
+              ))}
+            </SlideShow>
+          )}
         </div>
       </div>
     </div>
