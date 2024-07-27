@@ -1,4 +1,4 @@
-function simulateAPICall() {
+function fetchRecommendations({ latitude = 0, longitude = 0 }) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const response = {
@@ -33,3 +33,5 @@ function simulateAPICall() {
     }, 30); // Simulating a delay of 1 second
   });
 }
+
+module.exports = fetchRecommendations;
