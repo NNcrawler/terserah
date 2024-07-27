@@ -102,7 +102,7 @@ func (g *GoogleLocationAPI) GetNearby(ctx context.Context, latitude, longitude, 
 func placeResponseToPlaceModel(place Place) model.Place {
 	var res model.Place
 
-	res.ID = place.ID
+	res.GooglePlaceID = place.ID
 	res.PlaceName = place.DisplayName.Text
 	res.GoogleMapsURI = place.GoogleMapsUri
 	res.Address = place.FormattedAddress
@@ -111,7 +111,6 @@ func placeResponseToPlaceModel(place Place) model.Place {
 	res.Types = place.Types
 	res.PrimaryType = place.PrimaryType
 	res.PhoneNumber = place.InternationalPhoneNumber
-	res.IsOpen = place.CurrentOpeningHours.OpenNow
 	res.Rating = place.Rating
 	res.UserRatingCount = place.UserRatingCount
 	res.PriceLevel = place.PriceLevel

@@ -1,6 +1,12 @@
 package server
 
-import "github.com/joeshaw/envdecode"
+import (
+	"fmt"
+
+	"github.com/jmoiron/sqlx"
+	"github.com/joeshaw/envdecode"
+	_ "github.com/lib/pq"
+)
 
 type Config struct {
 	Port int `env:"APP_PORT"`
@@ -19,6 +25,18 @@ type Config struct {
 		Host   string `env:"OPENAI_HOST"`
 		APIKey string `env:"OPENAI_API_KEY"`
 	}
+
+	Database DatabaseConfig
+}
+
+type DatabaseConfig struct {
+	Host                   string `env:"DB_HOST"`
+	Username               string `env:"DB_USERNAME"`
+	Password               string `env:"DB_PASSWORD"`
+	Name                   string `env:"DB_NAME"`
+	Port                   string `env:"DB_PORT"`
+	IsProd                 bool   `env:"DB_IS_PROD"`
+	InstanceConnectionName string `env:"DB_INSTANCE_CONNECTION_NAME"`
 }
 
 func LoadConfig() (Config, error) {
@@ -28,4 +46,28 @@ func LoadConfig() (Config, error) {
 	}
 
 	return cfg, nil
+}
+
+func ConnectToDB(dbCfg DatabaseConfig) *sqlx.DB {
+	var dsn string
+	if dbCfg.IsProd {
+		dsn = fmt.Sprintf(
+			"%s:%s@unix(/cloudsql/%s)/%s?parseTime=true",
+			dbCfg.Username, dbCfg.Password,
+			dbCfg.InstanceConnectionName, dbCfg.Name,
+		)
+	} else {
+		dsn = fmt.Sprintf(
+			"postgres://%s:%s@%s:%s/%s?sslmode=disable",
+			dbCfg.Username, dbCfg.Password, dbCfg.Host,
+			dbCfg.Port, dbCfg.Name,
+		)
+	}
+
+	db, err := sqlx.Open("postgres", dsn)
+	if err != nil {
+		panic(err)
+	}
+
+	return db
 }

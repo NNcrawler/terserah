@@ -6,11 +6,10 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/ahmadnaufal/recommender-worker/ext/location"
-	"github.com/ahmadnaufal/recommender-worker/ext/openai"
 	"github.com/ahmadnaufal/recommender-worker/ext/weather"
 	"github.com/ahmadnaufal/recommender-worker/model"
 	"github.com/ahmadnaufal/recommender-worker/recommender"
+	"github.com/ahmadnaufal/recommender-worker/repo"
 	"github.com/ahmadnaufal/recommender-worker/server"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/functions"
@@ -49,10 +48,13 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
-	locationProv := location.New(cfg.Google.Host, cfg.Google.APIKey)
+	db := server.ConnectToDB(cfg.Database)
+
+	// locationProv := location.New(cfg.Google.Host, cfg.Google.APIKey)
 	weatherProv := weather.New(cfg.Weather.Host, cfg.Weather.APIKey)
-	openAiProv := openai.New(cfg.OpenAI.Host, cfg.OpenAI.APIKey)
+	// openAiProv := openai.New(cfg.OpenAI.Host, cfg.OpenAI.APIKey)
 	recommenderEngine := recommender.New("test")
+	locationRepo := repo.New(db)
 
 	ctx := r.Context()
 
@@ -60,11 +62,16 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 	latitude, _ := strconv.ParseFloat(q.Get("latitude"), 64)
 	longitude, _ := strconv.ParseFloat(q.Get("longitude"), 64)
 
-	places, err := locationProv.GetNearby(ctx, latitude, longitude, 500.0, 10)
+	// places, err := locationProv.GetNearby(ctx, latitude, longitude, 500.0, 10)
+	// if err != nil {
+	// 	w.WriteHeader(http.StatusInternalServerError)
+	// 	fmt.Fprint(w, "Error:", err.Error())
+	// 	return
+	// }
+
+	places, err := locationRepo.ListByClosestDistance(ctx, latitude, longitude, 10)
 	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-		fmt.Fprint(w, "Error:", err.Error())
-		return
+		panic(err)
 	}
 
 	currentWeather, err := weatherProv.GetWeather(ctx, latitude, longitude)
@@ -75,14 +82,21 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// populate dishes
-	for i := 0; i < len(places); i++ {
-		dishType, err := openAiProv.GetPossibleFoodsFromPlace(ctx, places[i])
-		if err != nil {
-			fmt.Fprint(w, "Error:", err.Error())
-			return
-		}
-		places[i].DishType = dishType
-	}
+	// for i := 0; i < len(places); i++ {
+	// 	dishType, err := openAiProv.GetPossibleFoodsFromPlace(ctx, places[i])
+	// 	if err != nil {
+	// 		fmt.Fprint(w, "Error:", err.Error())
+	// 		return
+	// 	}
+	// 	places[i].DishType = dishType
+	// 	places[i].ID = uuid.NewString()
+
+	// 	err = locationRepo.InsertPlace(ctx, places[i])
+	// 	if err != nil {
+	// 		fmt.Fprint(w, "Error:", err.Error())
+	// 		return
+	// 	}
+	// }
 
 	placesToRecommend, err := recommenderEngine.GenerateRecommendations(r.Context(), recommender.RecommendationRequest{
 		Places:           places,

@@ -1,0 +1,2 @@
+ALTER TABLE locations
+ADD COLUMN geom GEOMETRY(Point, 4326);
