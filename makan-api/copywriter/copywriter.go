@@ -10,7 +10,7 @@ import (
 	"github.com/ayush6624/go-chatgpt"
 )
 
-func CallOpenAI(apiKey, prompt string) (string, error) {
+func callOpenAI(apiKey, prompt string) (string, error) {
 	client, err := chatgpt.NewClient(apiKey)
 	if err != nil {
 		fmt.Print(err)
@@ -46,7 +46,7 @@ func (w Writer) AsLocalGuide(dish DishToRecommend) (string, error) {
 	if err != nil {
 		return "", fmt.Errorf("fail to render prompt: %w", err)
 	}
-	return CallOpenAI(w.ApiKey, prompt)
+	return callOpenAI(w.ApiKey, prompt)
 }
 
 func stringTmplRenderer(promptTmpl string, data interface{}) (string, error) {
