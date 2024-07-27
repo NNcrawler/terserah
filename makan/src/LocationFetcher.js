@@ -1,27 +1,26 @@
-import React, { useState } from 'react';
-import { useGeolocation } from '@uidotdev/usehooks';
+import React from 'react';
 
-function LocationFetcher() {
-  const location = useGeolocation();
-
-  if (location.loading) {
-    return <p>loading... (you may need to enable permissions)</p>;
+function LocationFetcher({
+  location: { loading, error, latitude, longitude },
+}) {
+  if (error) {
+    return <p>Enable permissions to access your location data</p>;
   }
 
-  if (location.error) {
-    return <p>Enable permissions to access your location data</p>;
+  if (loading) {
+    return <p>loading... (you may need to enable permissions)</p>;
   }
 
   return (
     <div>
-      <h1>Get User Location</h1>
+      <h1 className="text-2xl font-bold underline">Your Location</h1>
 
-      {location.latitude && (
+      {latitude && (
         <p>
-          Latitude: {location.latitude}, Longitude: {location.longitude}
+          Latitude: {latitude}, Longitude: {longitude}
         </p>
       )}
-      {location.error && <p>Error: {location.error}</p>}
+      {error && <p>Error: {error}</p>}
     </div>
   );
 }
