@@ -1,7 +1,6 @@
 import './App.css';
 
 import { useGeolocation } from '@uidotdev/usehooks';
-import copyWriter from './api/copywriter';
 import { useEffect, useState } from 'react';
 import fetchRecommendations from './api/recommendation';
 import Card from './components/card';
@@ -24,30 +23,22 @@ function App() {
     }
   }, [location]);
 
-  const [reviews, setReviews] = useState([]);
-  useEffect(() => {
-    if (recommendations.length > 0) {
-      copyWriter('reviewSummarizer', {
-        reviews: recommendations[0].reviews,
-      }).then((reviews) => {
-        setReviews(reviews);
-      });
-    }
-    console.log(recommendations);
-  }, [recommendations]);
 
   return (
     <div className="App">
       <div className="flex items-center justify-center h-screen">
         <div className="max-w-sm h-screen">
-          {reviews && (
+          {recommendations.length > 0 && (
             <SlideShow slides={recommendations}>
               {recommendations.map((recommendation, i) => (
                 <Card
                   key={i}
+                  tags = {recommendation.tags}
                   title={recommendation.name}
-                  content={reviews}
+                  reviews={recommendation.reviews}
                   location={recommendation.location}
+                  dishes={recommendation.dishType}
+                  distance={recommendation.distance}
                 />
               ))}
             </SlideShow>

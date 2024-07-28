@@ -26,7 +26,7 @@ func (w ReviewSummarizer) AsReviewer(reviews []string) (string, error) {
 		fmt.Print(err)
 	}
 	res, err := client.Send(context.Background(), &chatgpt.ChatCompletionRequest{
-		Model: chatgpt.GPT4,
+		Model: chatgpt.GPT35Turbo,
 		Messages: []chatgpt.ChatMessage{
 			{
 				Role:    chatgpt.ChatGPTModelRoleSystem,
