@@ -17,7 +17,7 @@ func (w ReviewSummarizer) AsReviewer(reviews []string) (ReviewSummary, error) {
 
 Have 2 kinds of summary. One is a food review summary. The second is a place review summary. Have one review for each category. Each summary has a maximum of 280 characters.
 
-Return the summaries in a JSON. Where category becomes the key and the review summary becomes the value.`
+Return the summaries in a JSON-encoded string where category becomes the key and the review summary becomes the value.`
 
 	bytesReviews, _ := json.Marshal(reviews)
 
@@ -53,6 +53,6 @@ Return the summaries in a JSON. Where category becomes the key and the review su
 }
 
 type ReviewSummary struct {
-	Food  string
-	Place string
+	Food  string `json:"food"`
+	Place string `json:"place"`
 }

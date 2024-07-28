@@ -3,6 +3,7 @@ package makanworker
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"net/http"
 	"strconv"
 
@@ -26,6 +27,7 @@ type PlaceResponse struct {
 	PriceLevel string            `json:"priceLevel"`
 	Location   PlaceLocation     `json:"location"`
 	Reviews    map[string]string `json:"reviews"`
+	Distance   int               `json:"distance"`
 }
 
 type PlaceLocation struct {
@@ -51,7 +53,7 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 	db := server.ConnectToDB(cfg.Database)
 
 	weatherProv := weather.New(cfg.Weather.Host, cfg.Weather.APIKey)
-	recommenderEngine := recommender.New("test")
+	recommenderEngine := recommender.New()
 	locationRepo := repo.New(db)
 
 	ctx := r.Context()
@@ -108,6 +110,7 @@ func placeToResponse(place model.Place) PlaceResponse {
 			"food":  place.SummaryReviewFood,
 			"place": place.SummaryReviewPlace,
 		},
+		Distance: int(math.Round(place.Distance)),
 	}
 }
 

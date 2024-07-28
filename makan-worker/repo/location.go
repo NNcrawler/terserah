@@ -37,7 +37,8 @@ func (l *LocationPostgres) ListByClosestDistance(ctx context.Context, latitude, 
 			summary_review_food,
 			summary_review_place,
 			phone_number,
-			score
+			score,
+			ST_Distance(geom::geography, ST_SetSRID(ST_MakePoint($1, $2), 4326)::geography) AS distance
 		FROM 
 			locations
 		WHERE

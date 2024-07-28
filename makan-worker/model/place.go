@@ -21,6 +21,8 @@ type Place struct {
 	SummaryReviewFood  string         `db:"summary_review_food"`
 	SummaryReviewPlace string         `db:"summary_review_place"`
 	Score              int            `db:"score"`
+	Distance           float64        `db:"distance"`
 
-	Tags pq.StringArray `db:"tags"`
+	Tags       pq.StringArray `db:"tags"`
+	TotalScore float64
 }
