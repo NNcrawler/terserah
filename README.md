@@ -1,6 +1,12 @@
 # Project Name
 
-This repository contains multiple projects related to the "makan" application ecosystem.
+> Recommendation system to empower small vendors with digital marketing power without they needing to do anything
+
+This repository contains multiple projects related to the "terserah" project. The project is created for AngleHack Jakarta 2024.
+
+## System Design
+![alt text](image.png)
+
 
 ## Project Structure
 
