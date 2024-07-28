@@ -1,4 +1,4 @@
-FUNCTION_NAME = GetRecommendations
+FUNCTION_NAME = BatchInsertRecommendations
 PROJECT_ID = exploration-way
 REGION = asia-southeast1 
 
@@ -12,5 +12,5 @@ deploy:
 		--runtime go121 \
 		--trigger-http \
 		--allow-unauthenticated \
-		--set-env-vars=GOOGLE_API_KEY=$(GOOGLE_API_KEY),GOOGLE_HOST=$(GOOGLE_HOST),WEATHER_API_KEY=$(WEATHER_API_KEY),WEATHER_HOST=$(WEATHER_HOST) \
-		--entry-point=GetRecommendations
+		--set-env-vars=GOOGLE_API_KEY=$(GOOGLE_API_KEY),GOOGLE_HOST=$(GOOGLE_HOST),WEATHER_API_KEY=$(WEATHER_API_KEY),WEATHER_HOST=$(WEATHER_HOST),DB_HOST=$(DB_HOST),DB_USERNAME=$(DB_USERNAME),DB_PASSWORD=$(DB_PASSWORD),DB_NAME=$(DB_NAME),DB_PORT=$(DB_PORT),DB_IS_PROD=true,DB_INSTANCE_CONNECTION_NAME=$(DB_INSTANCE_CONNECTION_NAME) \
+		--entry-point=BatchInsertRecommendations
