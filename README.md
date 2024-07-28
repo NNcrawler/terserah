@@ -4,6 +4,8 @@
 
 This repository contains multiple projects related to the "terserah" project. The project is created for AngleHack Jakarta 2024.
 
+<img src="app.png" height=300>
+
 ## System Design
 ![alt text](image.png)
 
