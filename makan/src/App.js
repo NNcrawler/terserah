@@ -23,6 +23,7 @@ function App() {
     }
   }, [location]);
 
+
   return (
     <div className="App">
       <div className="flex items-center justify-center h-screen">
@@ -32,6 +33,7 @@ function App() {
               {recommendations.map((recommendation, i) => (
                 <Card
                   key={i}
+                  tags = {recommendation.tags}
                   title={recommendation.name}
                   reviews={recommendation.reviews}
                   location={recommendation.location}
