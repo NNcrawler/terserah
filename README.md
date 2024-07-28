@@ -1,4 +1,4 @@
-# Project Name
+# Terserah
 
 > Recommendation system to empower small vendors with digital marketing power without they needing to do anything
 
