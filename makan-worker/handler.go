@@ -20,12 +20,12 @@ func init() {
 }
 
 type PlaceResponse struct {
-	Name       string        `json:"name"`
-	Tags       []string      `json:"tags"`
-	DishType   []string      `json:"dishType"`
-	PriceLevel string        `json:"priceLevel"`
-	Location   PlaceLocation `json:"location"`
-	Reviews    []string      `json:"reviews"`
+	Name       string            `json:"name"`
+	Tags       []string          `json:"tags"`
+	DishType   []string          `json:"dishType"`
+	PriceLevel string            `json:"priceLevel"`
+	Location   PlaceLocation     `json:"location"`
+	Reviews    map[string]string `json:"reviews"`
 }
 
 type PlaceLocation struct {
@@ -50,9 +50,7 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 
 	db := server.ConnectToDB(cfg.Database)
 
-	// locationProv := location.New(cfg.Google.Host, cfg.Google.APIKey)
 	weatherProv := weather.New(cfg.Weather.Host, cfg.Weather.APIKey)
-	// openAiProv := openai.New(cfg.OpenAI.Host, cfg.OpenAI.APIKey)
 	recommenderEngine := recommender.New("test")
 	locationRepo := repo.New(db)
 
@@ -61,13 +59,6 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 	q := r.URL.Query()
 	latitude, _ := strconv.ParseFloat(q.Get("latitude"), 64)
 	longitude, _ := strconv.ParseFloat(q.Get("longitude"), 64)
-
-	// places, err := locationProv.GetNearby(ctx, latitude, longitude, 500.0, 10)
-	// if err != nil {
-	// 	w.WriteHeader(http.StatusInternalServerError)
-	// 	fmt.Fprint(w, "Error:", err.Error())
-	// 	return
-	// }
 
 	places, err := locationRepo.ListByClosestDistance(ctx, latitude, longitude, 10)
 	if err != nil {
@@ -80,23 +71,6 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprint(w, "Error:", err.Error())
 		return
 	}
-
-	// populate dishes
-	// for i := 0; i < len(places); i++ {
-	// 	dishType, err := openAiProv.GetPossibleFoodsFromPlace(ctx, places[i])
-	// 	if err != nil {
-	// 		fmt.Fprint(w, "Error:", err.Error())
-	// 		return
-	// 	}
-	// 	places[i].DishType = dishType
-	// 	places[i].ID = uuid.NewString()
-
-	// 	err = locationRepo.InsertPlace(ctx, places[i])
-	// 	if err != nil {
-	// 		fmt.Fprint(w, "Error:", err.Error())
-	// 		return
-	// 	}
-	// }
 
 	placesToRecommend, err := recommenderEngine.GenerateRecommendations(r.Context(), recommender.RecommendationRequest{
 		Places:           places,
@@ -130,7 +104,10 @@ func placeToResponse(place model.Place) PlaceResponse {
 			GoogleMaps: place.GoogleMapsURI,
 			Address:    place.Address,
 		},
-		Reviews: place.Reviews,
+		Reviews: map[string]string{
+			"food":  place.SummaryReviewFood,
+			"place": place.SummaryReviewPlace,
+		},
 	}
 }
 

@@ -4,3 +4,5 @@
 /env.sh
 /openai-key
 /keys
+/env.prod.sh
+/cloud-sql-proxy

@@ -3,3 +3,6 @@
 
 /env.sh
 /openai-key
+/env.prod.sh
+/cloud-sql-proxy
+/cmd/__debug_bin*

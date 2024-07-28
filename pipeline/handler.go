@@ -2,23 +2,23 @@ package makanworker
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"net/http"
 	"strconv"
 
-	"github.com/ahmadnaufal/recommender-worker/ext/location"
-	"github.com/ahmadnaufal/recommender-worker/ext/openai"
-	"github.com/ahmadnaufal/recommender-worker/ext/weather"
-	"github.com/ahmadnaufal/recommender-worker/model"
-	"github.com/ahmadnaufal/recommender-worker/recommender"
-	"github.com/ahmadnaufal/recommender-worker/server"
+	"github.com/ahmadnaufal/recommender-pipeline/ext/location"
+	"github.com/ahmadnaufal/recommender-pipeline/ext/openai"
+	"github.com/ahmadnaufal/recommender-pipeline/model"
+	"github.com/ahmadnaufal/recommender-pipeline/recommender"
+	"github.com/ahmadnaufal/recommender-pipeline/repo"
+	"github.com/ahmadnaufal/recommender-pipeline/server"
+	"github.com/google/uuid"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/functions"
 )
 
 func init() {
-	functions.HTTP("GetRecommendations", GetRecommendations)
+	functions.HTTP("BatchInsertRecommendations", BatchInsertRecommendations)
 }
 
 type PlaceResponse struct {
@@ -39,7 +39,7 @@ type BaseResponse struct {
 	Data any `json:"data"`
 }
 
-func GetRecommendations(w http.ResponseWriter, r *http.Request) {
+func BatchInsertRecommendations(w http.ResponseWriter, r *http.Request) {
 	shouldReturn := handleCors(w, r)
 	if shouldReturn {
 		return
@@ -50,24 +50,19 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
+	db := server.ConnectToDB(cfg.Database)
 	locationProv := location.New(cfg.Google.Host, cfg.Google.APIKey)
-	weatherProv := weather.New(cfg.Weather.Host, cfg.Weather.APIKey)
 	recommenderEngine := recommender.New("test")
+	locationRepo := repo.New(db)
 
 	ctx := r.Context()
 
 	q := r.URL.Query()
 	latitude, _ := strconv.ParseFloat(q.Get("latitude"), 64)
 	longitude, _ := strconv.ParseFloat(q.Get("longitude"), 64)
+	numOfRecommendationsBatch, _ := strconv.ParseUint(q.Get("n"), 10, 64)
 
-	places, err := locationProv.GetNearby(ctx, latitude, longitude, 500.0, 10)
-	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-		fmt.Fprint(w, "Error:", err.Error())
-		return
-	}
-
-	currentWeather, err := weatherProv.GetWeather(ctx, latitude, longitude)
+	places, err := locationProv.GetNearby(ctx, latitude, longitude, 500.0, uint(numOfRecommendationsBatch))
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		fmt.Fprint(w, "Error:", err.Error())
@@ -87,8 +82,7 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 	}
 
 	placesToRecommend, err := recommenderEngine.GenerateRecommendations(r.Context(), recommender.RecommendationRequest{
-		Places:           places,
-		WeatherCondition: currentWeather,
+		Places: places,
 	})
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
@@ -96,33 +90,19 @@ func GetRecommendations(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var placesResponse []PlaceResponse
-	for _, placeToRecommend := range placesToRecommend {
-		placesResponse = append(placesResponse, placeToResponse(placeToRecommend))
+	// save places
+	for _, p := range placesToRecommend {
+		p.ID = uuid.NewString()
+		err = locationRepo.InsertPlace(ctx, p)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			fmt.Fprint(w, "Error:", err.Error())
+			return
+		}
 	}
 
-	response := BaseResponse{Data: placesResponse}
-
-	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(response)
-}
-
-func placeToResponse(place model.Place) PlaceResponse {
-	return PlaceResponse{
-		Name:       place.PlaceName,
-		DishType:   place.DishType,
-		Tags:       place.Tags,
-		PriceLevel: place.PriceLevel,
-		Location: PlaceLocation{
-			GoogleMaps: place.GoogleMapsURI,
-			Address:    place.Address,
-		},
-		Reviews: map[string]string{
-			"food":  place.ReviewsSummary.Food,
-			"place": place.ReviewsSummary.Place,
-		},
-	}
+	fmt.Fprintf(w, "%d places processed.", len(placesToRecommend))
 }
 
 func handleCors(w http.ResponseWriter, r *http.Request) bool {
@@ -158,10 +138,8 @@ func enrichWithReviews(ctx context.Context, cfg server.Config, places []model.Pl
 		if err != nil {
 			return err
 		}
-		places[i].ReviewsSummary = model.ReviewSummary{
-			Food:  reviewSummary.Food,
-			Place: reviewSummary.Place,
-		}
+		places[i].SummaryReviewFood = reviewSummary.Food
+		places[i].SummaryReviewPlace = reviewSummary.Place
 	}
 	return nil
 }

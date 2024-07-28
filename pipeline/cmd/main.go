@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
-	_ "github.com/ahmadnaufal/recommender-worker"
+	_ "github.com/ahmadnaufal/recommender-pipeline"
 )
 
 func main() {

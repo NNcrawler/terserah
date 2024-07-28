@@ -3,7 +3,7 @@ package recommender
 import (
 	"context"
 
-	"github.com/ahmadnaufal/recommender-worker/model"
+	"github.com/ahmadnaufal/recommender-pipeline/model"
 )
 
 type RecommenderEngine struct {

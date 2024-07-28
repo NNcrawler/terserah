@@ -1,6 +1,6 @@
 package recommender
 
-import "github.com/ahmadnaufal/recommender-worker/model"
+import "github.com/ahmadnaufal/recommender-pipeline/model"
 
 type RecommendationRequest struct {
 	Places           []model.Place

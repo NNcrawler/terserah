@@ -51,11 +51,8 @@ func LoadConfig() (Config, error) {
 func ConnectToDB(dbCfg DatabaseConfig) *sqlx.DB {
 	var dsn string
 	if dbCfg.IsProd {
-		dsn = fmt.Sprintf(
-			"%s:%s@unix(/cloudsql/%s)/%s?parseTime=true",
-			dbCfg.Username, dbCfg.Password,
-			dbCfg.InstanceConnectionName, dbCfg.Name,
-		)
+		dsn = fmt.Sprintf("user=%s password=%s database=%s host=/cloudsql/%s",
+			dbCfg.Username, dbCfg.Password, dbCfg.Name, dbCfg.InstanceConnectionName)
 	} else {
 		dsn = fmt.Sprintf(
 			"postgres://%s:%s@%s:%s/%s?sslmode=disable",
