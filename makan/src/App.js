@@ -37,6 +37,8 @@ function App() {
                   title={recommendation.name}
                   reviews={recommendation.reviews}
                   location={recommendation.location}
+                  dishes={recommendation.dishType}
+                  distance={recommendation.distance}
                 />
               ))}
             </SlideShow>
