@@ -15,7 +15,7 @@ const TagEmoji = ({ tag }) => {
 
   return (
     <div>
-      <span className="size-28">
+      <span className="size-28 text-opacity-25">
         <h6>{emoji}</h6>
       </span>
     </div>
